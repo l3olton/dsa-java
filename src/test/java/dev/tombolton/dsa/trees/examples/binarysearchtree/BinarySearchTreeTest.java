@@ -23,6 +23,13 @@ public class BinarySearchTreeTest {
         node27.setLeftChild(node6);
 
         TreeNode<Integer> root = new TreeNode<>(50, node27, node72);
+        /*
+         *                   50
+         *                  /  \
+         *                 27   72
+         *                / \   / \
+         *               6  48 53 84
+         */
 
         // Act
         TreeNode<Integer> result = BinarySearchTree.search(48, root);
@@ -48,9 +55,25 @@ public class BinarySearchTreeTest {
         node27.setLeftChild(node6);
 
         TreeNode<Integer> root = new TreeNode<>(50, node27, node72);
+        /*
+         *                   50
+         *                  /  \
+         *                 27   72
+         *                / \   / \
+         *               6  48 53 84
+         */
 
         // Act
         BinarySearchTree.insert(60, root);
+        /*
+         *                   50
+         *                  /  \
+         *                 27   72
+         *                / \   / \
+         *               6  48 53 84
+         *                      \
+         *                      60
+         */
 
         // Assert
         assertEquals(60, node53.getRightChild().getValue());
@@ -105,9 +128,23 @@ public class BinarySearchTreeTest {
         node27.setLeftChild(node6);
 
         TreeNode<Integer> root = new TreeNode<>(50, node27, node72);
+        /*
+         *                   50
+         *                  /  \
+         *                 27   72
+         *                / \   / \
+         *               6  48 53 84
+         */
 
         // Act
         BinarySearchTree.delete(6, root);
+        /*
+         *                   50
+         *                  /  \
+         *                 27   72
+         *                  \   / \
+         *                  48 53 84
+         */
 
         // Assert
         assertNull(node27.getLeftChild());
